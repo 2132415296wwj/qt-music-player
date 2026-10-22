@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>playerMainWindow</class>
+ <widget class="QMainWindow" name="playerMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>5</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
+  </property>
+  <property name="windowTitle">
+   <string>wwj播放器</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#playerMainWindow{border-image: url(:/new/prefix1/mybackground.png);}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <property name="spacing">
+     <number>15</number>
+    </property>
+    <property name="leftMargin">
+     <number>20</number>
+    </property>
+    <property name="topMargin">
+     <number>20</number>
+    </property>
+    <property name="rightMargin">
+     <number>20</number>
+    </property>
+    <property name="bottomMargin">
+     <number>20</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" name="listsLayout">
+      <property name="spacing">
+       <number>15</number>
+      </property>
+      <item>
+       <widget class="QListWidget" name="listWidget">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(50, 50, 50, 80); color: white; border-radius: 8px;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QListWidget" name="listWidget_history">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgba(50, 50, 50, 80); color: white; border-radius: 8px;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="titleLayout">
+      <item>
+       <spacer name="titleSpacerLeft">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_music_name">
+        <property name="styleSheet">
+         <string notr="true">color: white; font-size: 14px;</string>
+        </property>
+        <property name="text">
+         <string>music_name</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="titleSpacerMid">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>30</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_time">
+        <property name="styleSheet">
+         <string notr="true">color: white;</string>
+        </property>
+        <property name="text">
+         <string>时间</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QSlider" name="horizontalSlider_play">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="controlLayout">
+      <item>
+       <spacer name="ctrlSpacerLeft">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_pre">
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: rgba(255, 255, 255, 0.1);    /* 半透明 */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;                            /* 圆形 */
+}
+QPushButton:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+QPushButton:pressed {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="img.qrc">
+          <normaloff>:/new/prefix1/previous.png</normaloff>:/new/prefix1/previous.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>60</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_play">
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: rgba(255, 255, 255, 0.1);    /* 半透明 */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;                            /* 圆形 */
+}
+QPushButton:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+QPushButton:pressed {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="img.qrc">
+          <normaloff>:/new/prefix1/play.png</normaloff>:/new/prefix1/play.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>60</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_next">
+        <property name="minimumSize">
+         <size>
+          <width>60</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: rgba(255, 255, 255, 0.1);    /* 半透明 */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;                            /* 圆形 */
+}
+QPushButton:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+QPushButton:pressed {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="img.qrc">
+          <normaloff>:/new/prefix1/next.png</normaloff>:/new/prefix1/next.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>60</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="ctrlSpacerMid">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="styleSheet">
+         <string notr="true">color: white;</string>
+        </property>
+        <property name="text">
+         <string>播放模式</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox">
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    padding: 4px 10px;
+    color: white;
+}
+QComboBox:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+QComboBox QAbstractItemView {
+    background-color: rgba(40, 40, 60, 0.9);
+    color: white;
+    selection-background-color: rgba(100, 150, 255, 0.4);
+}</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>列表循环</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>单曲循环</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>随机播放</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <spacer name="ctrlSpacerVol">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>30</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="styleSheet">
+         <string notr="true">color: white;</string>
+        </property>
+        <property name="text">
+         <string>音量</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlider" name="verticalSlider_vol">
+        <property name="maximumSize">
+         <size>
+          <width>20</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="mouseTracking">
+         <bool>false</bool>
+        </property>
+        <property name="value">
+         <number>20</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="bottomLayout">
+      <item>
+       <widget class="QPushButton" name="pushButton_choseUser">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    padding: 6px 16px;
+}
+QPushButton:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+QPushButton:pressed {
+    background-color: rgba(255, 255, 255, 0.1);
+}</string>
+        </property>
+        <property name="text">
+         <string>切换用户</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_choseList">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    padding: 6px 16px;
+}
+QPushButton:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+QPushButton:pressed {
+    background-color: rgba(255, 255, 255, 0.1);
+}</string>
+        </property>
+        <property name="text">
+         <string>选择歌单</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="bottomSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_serach">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 6px 12px;
+    color: white;
+    selection-background-color: rgba(100, 150, 255, 0.5);
+}
+QLineEdit::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_clear">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    padding: 6px 16px;
+}
+QPushButton:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+QPushButton:pressed {
+    background-color: rgba(255, 255, 255, 0.1);
+}</string>
+        </property>
+        <property name="text">
+         <string>清除</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="img.qrc"/>
+ </resources>
+ <connections/>
+</ui>
